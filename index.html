@@ -5,78 +5,190 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QQAI — $QQAI Bonding Curve Fair Launch | BNB Chain · Agent ID</title>
 <meta name="description" content="QQAI ($QQAI) fair launch on a bonding curve. Buy with BNB or USDT, price rises as the curve fills, automatic migration to two PancakeSwap pools at graduation. Agent ID gated. Sale opens Dec 2, 2026 08:00 UTC+8.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#070a14; --bg2:#0b1020; --card:#101830; --card2:#0d1428;
-  --line:#22305a; --txt:#eef2ff; --mut:#93a3c8; --dim:#5f6f96;
-  --acc:#4da3ff; --acc2:#8b5cff; --gold:#f5b93f; --grn:#2fd48c; --red:#ff6b81;
+  --bg:#07090d; --bg2:#0a0d13;
+  --panel:rgba(255,255,255,.032); --panel2:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.085); --line2:rgba(255,255,255,.14);
+  --txt:#f5f2ea; --mut:#9ba4b5; --dim:#626b7d;
+  --gold:#f5b93f; --gold2:#ffdf8e; --amber:#e8862e;
+  --grn:#34d399; --red:#ff7086;
+  --fd:"Space Grotesk","Segoe UI",system-ui,-apple-system,Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  --fb:"Segoe UI",system-ui,-apple-system,Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:radial-gradient(1100px 520px at 50% -120px,rgba(77,163,255,.16),transparent 60%),radial-gradient(900px 500px at 85% 10%,rgba(139,92,255,.12),transparent 60%),var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,-apple-system,Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}
-a{color:var(--acc);text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
-header{position:sticky;top:0;z-index:50;background:rgba(7,10,20,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.hbar{display:flex;align-items:center;gap:14px;padding:12px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:.5px}
-.logo img{width:38px;height:38px;border-radius:10px;object-fit:cover;border:1px solid var(--line)}
+body{background:
+  radial-gradient(1100px 540px at 50% -160px,rgba(245,185,63,.14),transparent 62%),
+  radial-gradient(860px 500px at 88% 4%,rgba(232,134,46,.08),transparent 60%),
+  radial-gradient(700px 500px at 6% 30%,rgba(245,185,63,.045),transparent 60%),
+  var(--bg);
+  color:var(--txt);font-family:var(--fb);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);
+  background-size:54px 54px;
+  -webkit-mask-image:radial-gradient(ellipse 95% 62% at 50% 0%,#000 25%,transparent 78%);
+          mask-image:radial-gradient(ellipse 95% 62% at 50% 0%,#000 25%,transparent 78%)}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")}
+a{color:var(--gold);text-decoration:none}
+header,.wrap{position:relative;z-index:1}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.fd{font-family:var(--fd)}
+::selection{background:rgba(245,185,63,.35)}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(7,9,13,.72);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:14px;padding:13px 0}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--fd);font-weight:700;font-size:21px;letter-spacing:.4px}
+.logo img{width:38px;height:38px;border-radius:11px;object-fit:cover;border:1px solid rgba(245,185,63,.4);box-shadow:0 0 18px rgba(245,185,63,.25)}
 .logo .tick{color:var(--gold)}
-nav{margin-left:auto;display:flex;gap:18px;align-items:center;font-size:14px}
-nav a{color:var(--mut)} nav a:hover{color:var(--txt)}
-.langbtn{background:var(--card);border:1px solid var(--line);color:var(--txt);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;font-weight:700}
-.langbtn:hover{border-color:var(--acc)}
-.hero{padding:56px 0 30px;text-align:center}
-.badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:4px 14px;font-size:13px;font-weight:700;letter-spacing:.4px;background:rgba(245,185,63,.08)}
-.hero h1{font-size:clamp(38px,6.5vw,64px);line-height:1.08;margin:18px 0 8px;font-weight:900}
-.hero h1 .grad{background:linear-gradient(92deg,var(--acc),var(--acc2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .sub{color:var(--mut);font-size:clamp(15px,2.4vw,19px);max-width:760px;margin:0 auto}
-.hero .opens{margin-top:18px;font-size:15px;color:var(--txt)}
-.hero .opens b{color:var(--gold)}
-.count{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
-.count .cell{background:var(--card);border:1px solid var(--line);border-radius:12px;min-width:74px;padding:8px 6px;text-align:center}
-.count .n{font-size:24px;font-weight:800}
-.count .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
-section{padding:34px 0}
-h2{font-size:clamp(24px,4vw,34px);margin-bottom:6px;font-weight:800}
-.secsub{color:var(--mut);margin-bottom:20px;max-width:820px}
+nav{margin-left:auto;display:flex;gap:22px;align-items:center;font-size:14px}
+nav a{color:var(--mut);transition:color .25s}
+nav a:hover{color:var(--txt)}
+.langbtn{background:var(--panel2);border:1px solid var(--line2);color:var(--txt);border-radius:999px;padding:6px 15px;cursor:pointer;font-size:13px;font-weight:600;font-family:var(--fd);transition:border-color .25s,background .25s}
+.langbtn:hover{border-color:var(--gold);background:rgba(245,185,63,.1)}
+@media(max-width:640px){nav a{display:none}nav a:last-of-type{display:block}}
+
+/* ---------- hero ---------- */
+.hero{padding:74px 0 8px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(245,185,63,.45);color:var(--gold2);border-radius:999px;padding:5px 15px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;background:rgba(245,185,63,.07);font-family:var(--fd)}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(245,185,63,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,185,63,.55)}70%{box-shadow:0 0 0 8px rgba(245,185,63,0)}100%{box-shadow:0 0 0 0 rgba(245,185,63,0)}}
+.hero h1{font-size:clamp(42px,7vw,72px);line-height:1.04;margin:24px 0 16px;font-weight:700;letter-spacing:-1.5px}
+.hero h1 .grad{background:linear-gradient(94deg,var(--gold2) 0%,var(--gold) 45%,var(--amber) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{color:var(--mut);font-size:clamp(15px,2.3vw,18.5px);max-width:780px;margin:0 auto}
+.hero .opens{margin-top:26px;font-size:14px;color:var(--mut);letter-spacing:.4px}
+.hero .opens b{color:var(--gold2);font-family:var(--fd)}
+.cta{display:flex;gap:12px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+.cta a{font-family:var(--fd);font-weight:600;font-size:15px;border-radius:999px;padding:12px 26px;transition:transform .25s,box-shadow .25s,background .25s,border-color .25s}
+.cta .primary{background:linear-gradient(94deg,var(--gold2),var(--gold) 55%,var(--amber));color:#191003;box-shadow:0 8px 30px rgba(245,185,63,.28)}
+.cta .primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(245,185,63,.38)}
+.cta .ghost{border:1px solid var(--line2);color:var(--txt);background:var(--panel)}
+.cta .ghost:hover{transform:translateY(-2px);border-color:rgba(245,185,63,.5)}
+.count{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.count .cell{background:var(--panel);border:1px solid var(--line);border-radius:16px;min-width:82px;padding:12px 8px 10px;text-align:center;backdrop-filter:blur(8px)}
+.count .n{font-family:var(--fd);font-size:30px;font-weight:700;color:var(--gold2);line-height:1.1;font-variant-numeric:tabular-nums}
+.count .l{font-size:10.5px;color:var(--dim);text-transform:uppercase;letter-spacing:1.6px;margin-top:3px}
+
+/* ---------- ticker ---------- */
+.ticker{margin:44px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ticker-track{display:flex;width:max-content;animation:tick 36s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.tgroup{display:flex;align-items:center}
+.ti{display:flex;align-items:center;gap:9px;padding:13px 26px;font-family:var(--fd);font-size:13px;letter-spacing:1.4px;color:var(--mut);white-space:nowrap;text-transform:uppercase}
+.ti b{color:var(--gold2);font-weight:700}
+.ti::after{content:"";width:5px;height:5px;border-radius:50%;background:rgba(245,185,63,.5);margin-left:26px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- sections / cards ---------- */
+section{padding:44px 0}
+.eyebrow{font-family:var(--fd);font-size:12px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h2{font-size:clamp(27px,4.2vw,38px);margin-bottom:8px;font-weight:700;letter-spacing:-.8px}
+.secsub{color:var(--mut);margin-bottom:24px;max-width:840px;font-size:15.5px}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
-.card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:16px;padding:20px}
-.card h3{font-size:17px;margin-bottom:8px}
+@media(max-width:900px){.g3,.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(245,185,63,.35);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.card h3{font-size:16.5px;margin-bottom:8px;font-weight:600;letter-spacing:-.2px}
 .card p,.card li{color:var(--mut);font-size:14.5px}
 .card ul{padding-left:18px}
-.stat .n{font-size:26px;font-weight:800}
-.stat .l{color:var(--dim);font-size:12.5px;text-transform:uppercase;letter-spacing:.6px}
-.panel{background:linear-gradient(180deg,#121c3a,#0c1329);border:1px solid var(--acc);border-radius:20px;padding:24px;box-shadow:0 0 0 1px rgba(77,163,255,.15),0 18px 50px rgba(0,0,0,.45)}
-.panel .prow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
-.panel .price{font-size:30px;font-weight:900}
-.bar{height:16px;background:#0a0f22;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:10px 0 6px}
-.bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
-.tabs{display:flex;gap:8px;margin:16px 0 10px}
-.tab{flex:1;text-align:center;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-weight:700;color:var(--mut)}
-.tab.on{color:var(--txt);border-color:var(--acc);background:rgba(77,163,255,.12)}
+.card ul li{margin-bottom:6px}
+.card b{color:var(--txt)}
+.stat .n{font-family:var(--fd);font-size:29px;font-weight:700;letter-spacing:-.5px;background:linear-gradient(94deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-top:5px}
+
+/* ---------- sale panel ---------- */
+.panel{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(245,185,63,.28);border-radius:26px;padding:28px;backdrop-filter:blur(14px);box-shadow:0 0 0 1px rgba(245,185,63,.06),0 30px 70px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.07)}
+@media(max-width:600px){.panel{padding:20px}}
+.panel::before{content:"";position:absolute;inset:-1px;border-radius:26px;padding:1px;background:linear-gradient(120deg,rgba(255,223,142,.5),transparent 30%,transparent 70%,rgba(232,134,46,.35));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.prow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.plabel{color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:1.6px;font-family:var(--fd)}
+.panel .price{font-family:var(--fd);font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.5px;margin-top:4px}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:5px 13px;font-size:11.5px;font-weight:600;letter-spacing:1.2px;font-family:var(--fd);border:1px solid rgba(245,185,63,.5);color:var(--gold2);background:rgba(245,185,63,.08)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2.2s infinite}
+.chartbox{margin:22px 0 4px;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:18px;padding:16px 14px 8px}
+.chartbox svg{width:100%;height:auto;display:block}
+.svglabel{font-family:var(--fd);font-size:12px;fill:var(--dim);letter-spacing:1px}
+.svglabel.gold{fill:var(--gold2)}
+.cline{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s cubic-bezier(.6,.05,.3,1) .3s forwards}
+.cfill{opacity:0;animation:fadein 1.4s ease 1.2s forwards}
+.cdot{transform-box:fill-box;transform-origin:center;animation:dotpulse 2.2s ease-in-out infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadein{to{opacity:1}}
+@keyframes dotpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.55)}}
+.bar{position:relative;height:14px;background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:10px 0 6px}
+.bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--amber))}
+.bar::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,223,142,.16) 50%,transparent 70%);background-size:220% 100%;animation:shimmer 2.8s linear infinite}
+@keyframes shimmer{from{background-position:180% 0}to{background-position:-80% 0}}
+.pstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+@media(max-width:700px){.pstats{grid-template-columns:1fr 1fr}}
+.pstat{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.pstat .n{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--txt)}
+.pstat .l{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:1.1px;margin-top:2px}
+.tabs{display:flex;gap:8px;margin:20px 0 12px;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:14px;padding:5px}
+.tab{flex:1;text-align:center;padding:10px;border-radius:10px;font-weight:600;font-family:var(--fd);font-size:14.5px;color:var(--dim);cursor:pointer;transition:background .25s,color .25s;user-select:none}
+.tab.on{color:#191003;background:linear-gradient(94deg,var(--gold2),var(--gold));box-shadow:0 4px 16px rgba(245,185,63,.25)}
+.tab.alt.on{color:var(--txt);background:var(--panel2);box-shadow:none;border:1px solid var(--line2)}
 .field{margin:10px 0}
-.field label{display:block;font-size:12.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
-.field .in{display:flex;align-items:center;background:#0a0f22;border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--dim);font-size:16px}
-.field .in b{margin-left:auto;color:var(--dim);font-weight:700}
-.btn{display:block;width:100%;text-align:center;border:none;border-radius:12px;padding:14px;font-size:16px;font-weight:800;cursor:not-allowed;background:linear-gradient(92deg,#2a3a63,#232f52);color:#8fa3cf}
-.note{font-size:13px;color:var(--mut);margin-top:10px}
-.steps .num{display:inline-flex;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
-.tokbar{display:flex;height:26px;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin:14px 0 6px}
-.tokbar i{display:block;height:100%}
-table{width:100%;border-collapse:collapse;font-size:14.5px}
-td,th{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-td:last-child{text-align:right;font-weight:700;white-space:nowrap}
-th{color:var(--dim);font-weight:600}
-details{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;font-size:15.5px}
-details p{color:var(--mut);font-size:14.5px;margin-top:8px}
-.warn{border:1px solid var(--red);background:rgba(255,107,129,.07);border-radius:14px;padding:16px 20px;color:#ffc9d2;font-size:14.5px}
-footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);font-size:13px;margin-top:20px}
-.pill{display:inline-block;background:rgba(47,212,140,.1);border:1px solid var(--grn);color:var(--grn);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700}
+.field label{display:block;font-size:11.5px;color:var(--dim);text-transform:uppercase;letter-spacing:1.4px;margin-bottom:6px;font-family:var(--fd)}
+.field .in{display:flex;align-items:center;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:14px;padding:13px 15px;color:var(--dim);font-size:16px;font-family:var(--fd)}
+.pays{margin-left:auto;display:flex;gap:6px}
+.pay{border:1px solid var(--line2);color:var(--mut);border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .25s;user-select:none}
+.pay.on{border-color:var(--gold);color:#191003;background:linear-gradient(94deg,var(--gold2),var(--gold))}
+.btn{display:block;width:100%;text-align:center;border:1px solid var(--line2);border-radius:14px;padding:15px;font-size:16px;font-weight:700;font-family:var(--fd);cursor:not-allowed;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--dim);margin-top:14px;letter-spacing:.3px}
+.note{font-size:13.5px;color:var(--mut);margin-top:12px}
+.note b{color:var(--txt)}
+
+/* ---------- steps ---------- */
+.steps{position:relative}
+@media(min-width:901px){
+  .steps::before{content:"";position:absolute;top:27px;left:11%;right:11%;height:1px;background:linear-gradient(90deg,transparent,rgba(245,185,63,.35),rgba(245,185,63,.35),transparent)}
+}
+.steps .num{position:relative;z-index:1;display:inline-flex;width:54px;height:54px;border-radius:50%;background:var(--bg2);border:1px solid rgba(245,185,63,.55);color:var(--gold2);font-family:var(--fd);font-weight:700;font-size:19px;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 0 22px rgba(245,185,63,.16)}
+
+/* ---------- tokenomics ---------- */
+.tokbar{display:flex;height:30px;border-radius:10px;overflow:hidden;border:1px solid var(--line);margin:16px 0 20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.tokbar i{display:block;height:100%;transition:filter .3s}
+.tokbar i:hover{filter:brightness(1.25)}
+.tokcard .dotc{width:11px;height:11px;border-radius:4px;display:inline-block;margin-bottom:12px}
+.tokcard .amt{font-family:var(--fd);font-size:27px;font-weight:700;letter-spacing:-.5px}
+.tokcard .pct{color:var(--gold2);font-family:var(--fd);font-size:13px;font-weight:600;letter-spacing:1px}
+.tokcard h3{margin-bottom:4px}
+
+/* ---------- faq ---------- */
+details{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:17px 20px;margin-bottom:10px;transition:border-color .3s}
+details:hover{border-color:var(--line2)}
+details[open ]{border-color:rgba(245,185,63,.35)}
+summary{cursor:pointer;font-weight:600;font-size:15.5px;font-family:var(--fd);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary .chev{color:var(--gold);font-size:13px;transition:transform .35s ease;flex:none}
+details[open ] summary .chev{transform:rotate(180deg)}
+details p{color:var(--mut);font-size:14.5px;margin-top:10px;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* ---------- misc ---------- */
+.warn{border:1px solid rgba(255,112,134,.4);background:rgba(255,112,134,.06);border-radius:18px;padding:18px 22px;color:#f3c3cb;font-size:14.5px}
+.warn b{color:#ffd9de}
+footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--dim);font-size:13px;margin-top:24px}
+footer a{color:var(--mut)} footer a:hover{color:var(--gold2)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
 [data-lang="en"] .zh{display:none!important}
 [data-lang="zh"] .en{display:none!important}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1!important;transform:none!important}
+  .cline{stroke-dashoffset:0!important}
+  .cfill{opacity:1!important}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
@@ -95,13 +207,17 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
 
 <div class="wrap">
   <!-- HERO -->
-  <div class="hero">
-    <span class="badge"><span class="en">PRE-LAUNCH · CONTRACTS NOT YET DEPLOYED</span><span class="zh">预发布 · 合约尚未部署</span></span>
+  <div class="hero rv">
+    <span class="badge"><span class="dot"></span><span class="en">Pre-launch · Contracts not yet deployed</span><span class="zh">预发布 · 合约尚未部署</span></span>
     <h1><span class="en">The <span class="grad">bonding curve</span><br>fair launch for AI agents</span><span class="zh">为 AI 智能体打造的<br><span class="grad">联合曲线</span>公平发射</span></h1>
     <p class="sub en">$QQAI is sold on its own bonding curve on BNB Chain — no presale, no private rounds. Buy with BNB or USDT, the price rises as the curve fills, and when the curve completes the liquidity migrates automatically to two PancakeSwap pools. Access is gated by Binance Agent ID.</p>
     <p class="sub zh">$QQAI 在 BNB 链上通过自有联合曲线出售——没有预售，没有私募轮次。可用 BNB 或 USDT 购买，价格随曲线填满而上涨；曲线完成后，流动性自动迁移至两个 PancakeSwap 池。参与需持有 Binance Agent ID。</p>
     <p class="opens en">Sale opens <b>Dec 2, 2026 · 08:00 (UTC+8)</b></p>
     <p class="opens zh">发售开启时间：<b>2026 年 12 月 2 日 · 08:00（UTC+8，北京时间）</b></p>
+    <div class="cta">
+      <a class="primary" href="#sale"><span class="en">View the sale</span><span class="zh">查看发售</span></a>
+      <a class="ghost" href="#how"><span class="en">How it works</span><span class="zh">运作方式</span></a>
+    </div>
     <div class="count" id="countdown">
       <div class="cell"><div class="n" id="cd-d">--</div><div class="l en">Days</div><div class="l zh">天</div></div>
       <div class="cell"><div class="n" id="cd-h">--</div><div class="l en">Hours</div><div class="l zh">小时</div></div>
@@ -110,35 +226,100 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
     </div>
   </div>
 
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="tgroup">
+        <span class="ti"><span class="en">Total supply</span><span class="zh">总供应量</span> <b>88.8 T</b></span>
+        <span class="ti"><span class="en">On the curve</span><span class="zh">曲线发售</span> <b>59.94 T</b></span>
+        <span class="ti"><span class="en">Curve fee</span><span class="zh">曲线手续费</span> <b>2.5%</b></span>
+        <span class="ti"><span class="en">DEX tax</span><span class="zh">DEX 税</span> <b>2% + 2%</b></span>
+        <span class="ti"><span class="en">LP at graduation</span><span class="zh">毕业时 LP</span> <b><span class="en">100% burned</span><span class="zh">100% 销毁</span></b></span>
+        <span class="ti"><span class="en">Pools</span><span class="zh">交易池</span> <b>QQAI/WBNB · QQAI/USDT</b></span>
+        <span class="ti"><span class="en">Access</span><span class="zh">参与门槛</span> <b>Agent ID</b></span>
+      </div>
+      <div class="tgroup">
+        <span class="ti"><span class="en">Total supply</span><span class="zh">总供应量</span> <b>88.8 T</b></span>
+        <span class="ti"><span class="en">On the curve</span><span class="zh">曲线发售</span> <b>59.94 T</b></span>
+        <span class="ti"><span class="en">Curve fee</span><span class="zh">曲线手续费</span> <b>2.5%</b></span>
+        <span class="ti"><span class="en">DEX tax</span><span class="zh">DEX 税</span> <b>2% + 2%</b></span>
+        <span class="ti"><span class="en">LP at graduation</span><span class="zh">毕业时 LP</span> <b><span class="en">100% burned</span><span class="zh">100% 销毁</span></b></span>
+        <span class="ti"><span class="en">Pools</span><span class="zh">交易池</span> <b>QQAI/WBNB · QQAI/USDT</b></span>
+        <span class="ti"><span class="en">Access</span><span class="zh">参与门槛</span> <b>Agent ID</b></span>
+      </div>
+    </div>
+  </div>
+
   <!-- SALE PANEL -->
   <section id="sale">
-    <div class="panel">
+    <div class="panel rv">
       <div class="prow">
         <div>
-          <div style="color:var(--dim);font-size:12.5px;text-transform:uppercase;letter-spacing:.6px"><span class="en">Current curve price</span><span class="zh">当前曲线价格</span></div>
+          <div class="plabel"><span class="en">Current curve price</span><span class="zh">当前曲线价格</span></div>
           <div class="price"><span class="en">Announced at launch</span><span class="zh">上线时公布</span></div>
         </div>
-        <span class="pill" style="border-color:var(--gold);color:var(--gold);background:rgba(245,185,63,.08)"><span class="en">OPENS DEC 2, 2026</span><span class="zh">2026 年 12 月 2 日开启</span></span>
+        <span class="pill"><span class="dot"></span><span class="en">OPENS DEC 2, 2026</span><span class="zh">2026 年 12 月 2 日开启</span></span>
       </div>
-      <div style="margin-top:18px">
+
+      <div class="chartbox">
+        <svg viewBox="0 0 640 250" role="img" aria-label="Bonding curve">
+          <defs>
+            <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f5b93f" stop-opacity=".30"/>
+              <stop offset="100%" stop-color="#f5b93f" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="strokeGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ffdf8e"/>
+              <stop offset="55%" stop-color="#f5b93f"/>
+              <stop offset="100%" stop-color="#e8862e"/>
+            </linearGradient>
+          </defs>
+          <line x1="8" y1="66" x2="632" y2="66" stroke="rgba(255,255,255,.05)"/>
+          <line x1="8" y1="132" x2="632" y2="132" stroke="rgba(255,255,255,.05)"/>
+          <line x1="8" y1="198" x2="632" y2="198" stroke="rgba(255,255,255,.05)"/>
+          <path class="cfill" d="M8,232 C160,228 280,214 390,178 C480,148 560,84 624,34 L624,242 L8,242 Z" fill="url(#fillGrad)"/>
+          <path class="cline" pathLength="1" d="M8,232 C160,228 280,214 390,178 C480,148 560,84 624,34" fill="none" stroke="url(#strokeGrad)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="624" cy="34" r="13" fill="#f5b93f" opacity=".16"/>
+          <circle class="cdot" cx="624" cy="34" r="5.5" fill="#ffdf8e"/>
+          <circle cx="8" cy="232" r="4" fill="#9ba4b5"/>
+          <text class="svglabel gold en" x="624" y="16" text-anchor="end">GRADUATION →</text>
+          <text class="svglabel gold zh" x="624" y="16" text-anchor="end">毕业 →</text>
+          <text class="svglabel en" x="8" y="20">PRICE ↑</text>
+          <text class="svglabel zh" x="8" y="20">价格 ↑</text>
+          <text class="svglabel en" x="8" y="246">0 SOLD</text>
+          <text class="svglabel zh" x="8" y="246">已售 0</text>
+          <text class="svglabel en" x="632" y="246" text-anchor="end">59.94 T SOLD →</text>
+          <text class="svglabel zh" x="632" y="246" text-anchor="end">售出 59.94 万亿 →</text>
+        </svg>
+      </div>
+
+      <div style="margin-top:16px">
         <div class="prow" style="font-size:14px;color:var(--mut)">
           <span><span class="en">Curve progress</span><span class="zh">曲线进度</span></span>
-          <span><b style="color:var(--txt)">0</b> / 59.94 <span class="en">T $QQAI</span><span class="zh">万亿 $QQAI</span> · 0.00%</span>
+          <span><b style="color:var(--txt);font-family:var(--fd)">0</b> / 59.94 <span class="en">T $QQAI</span><span class="zh">万亿 $QQAI</span> · 0.00%</span>
         </div>
         <div class="bar"><i></i></div>
         <div style="font-size:13px;color:var(--dim)"><span class="en">The curve holds 59.94 trillion $QQAI. When it sells out, graduation happens automatically — no manual step.</span><span class="zh">曲线内含 59.94 万亿 $QQAI。售罄后将自动毕业——无需任何手动操作。</span></div>
       </div>
+
+      <div class="pstats">
+        <div class="pstat"><div class="n">59.94 T</div><div class="l"><span class="en">On the curve</span><span class="zh">曲线发售量</span></div></div>
+        <div class="pstat"><div class="n">0</div><div class="l"><span class="en">Sold so far</span><span class="zh">已售出</span></div></div>
+        <div class="pstat"><div class="n">2.5%</div><div class="l"><span class="en">Curve fee</span><span class="zh">曲线手续费</span></div></div>
+        <div class="pstat"><div class="n">Agent ID</div><div class="l"><span class="en">Required to buy</span><span class="zh">购买门槛</span></div></div>
+      </div>
+
       <div class="tabs">
-        <div class="tab on"><span class="en">Buy</span><span class="zh">买入</span></div>
-        <div class="tab"><span class="en">Sell back</span><span class="zh">卖回</span></div>
+        <div class="tab on" id="tabBuy"><span class="en">Buy</span><span class="zh">买入</span></div>
+        <div class="tab alt" id="tabSell"><span class="en">Sell back</span><span class="zh">卖回</span></div>
       </div>
       <div class="field">
         <label><span class="en">You pay</span><span class="zh">你支付</span></label>
-        <div class="in"><span>0.0</span><b>BNB / USDT</b></div>
+        <div class="in"><span>0.0</span><span class="pays"><span class="pay on" id="payBnb">BNB</span><span class="pay" id="payUsdt">USDT</span></span></div>
       </div>
       <div class="field">
         <label><span class="en">You receive (estimated)</span><span class="zh">你将收到（预估）</span></label>
-        <div class="in"><span>0</span><b>$QQAI</b></div>
+        <div class="in"><span>0</span><b style="margin-left:auto;color:var(--dim)">$QQAI</b></div>
       </div>
       <button class="btn" type="button" disabled><span class="en">Sale opens Dec 2, 2026</span><span class="zh">2026 年 12 月 2 日开启发售</span></button>
       <p class="note en">Pay with <b>BNB</b> or <b>USDT</b> — USDT is converted at the real-time BNB/USD rate. Curve fee: <b>2.5%</b> per buy / sell-back. Selling back into the curve is open at any time before graduation. A Binance <b>Agent ID</b> is required to buy.</p>
@@ -150,29 +331,30 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
 
   <!-- HOW IT WORKS -->
   <section id="how">
-    <h2><span class="en">How it works</span><span class="zh">运作方式</span></h2>
-    <p class="secsub en">One curve, one price rule, fully on-chain. No order book, no private allocations — every buyer trades against the same curve.</p>
-    <p class="secsub zh">一条曲线，一套定价规则，完全链上运行。没有订单簿，没有私下配额——每位买家都面对同一条曲线交易。</p>
+    <div class="eyebrow rv"><span class="en">The mechanism</span><span class="zh">机制</span></div>
+    <h2 class="rv"><span class="en">How it works</span><span class="zh">运作方式</span></h2>
+    <p class="secsub rv en">One curve, one price rule, fully on-chain. No order book, no private allocations — every buyer trades against the same curve.</p>
+    <p class="secsub rv zh">一条曲线，一套定价规则，完全链上运行。没有订单簿，没有私下配额——每位买家都面对同一条曲线交易。</p>
     <div class="grid g4 steps">
-      <div class="card">
+      <div class="card rv">
         <span class="num">1</span>
         <h3><span class="en">Buy on the curve</span><span class="zh">在曲线上买入</span></h3>
         <p class="en">Connect an Agent ID wallet and buy $QQAI with BNB or USDT. USDT payments are converted at the real-time BNB/USD rate, so both currencies buy at the same curve price.</p>
         <p class="zh">连接持有 Agent ID 的钱包，用 BNB 或 USDT 买入 $QQAI。USDT 付款按实时 BNB/USD 汇率换算，两种货币买入价格一致。</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <span class="num">2</span>
         <h3><span class="en">Price rises as it fills</span><span class="zh">越买价格越高</span></h3>
         <p class="en">Every purchase moves the price up along the curve; every sell-back moves it down. Early buyers pay less — the curve rewards being early, transparently.</p>
         <p class="zh">每笔买入都会沿曲线推高价格，每笔卖回都会拉低价格。越早买入价格越低——曲线以透明的方式奖励早期参与者。</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <span class="num">3</span>
         <h3><span class="en">Sell back any time</span><span class="zh">随时可以卖回</span></h3>
         <p class="en">Changed your mind before graduation? Sell your $QQAI back into the curve at the current curve price (2.5% curve fee applies to buys and sell-backs).</p>
         <p class="zh">毕业前改变主意？可按当前曲线价格将 $QQAI 卖回曲线（买入与卖回均收取 2.5% 曲线手续费）。</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <span class="num">4</span>
         <h3><span class="en">Graduation: two pools</span><span class="zh">毕业：双池上线</span></h3>
         <p class="en">When all 59.94 T on the curve are sold, the raised funds and the 19.98 T liquidity reserve migrate automatically to two PancakeSwap pools — QQAI/WBNB and QQAI/USDT. LP tokens are 100% burned, and open DEX trading begins.</p>
@@ -183,25 +365,26 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
 
   <!-- KEY FACTS -->
   <section id="facts">
-    <h2><span class="en">Key facts</span><span class="zh">关键参数</span></h2>
+    <div class="eyebrow rv"><span class="en">At a glance</span><span class="zh">一览</span></div>
+    <h2 class="rv"><span class="en">Key facts</span><span class="zh">关键参数</span></h2>
     <div class="grid g4">
-      <div class="card stat"><div class="n">88.8 <span class="en">T</span><span class="zh">万亿</span></div><div class="l"><span class="en">Total supply $QQAI</span><span class="zh">$QQAI 总供应量</span></div></div>
-      <div class="card stat"><div class="n">59.94 <span class="en">T</span><span class="zh">万亿</span></div><div class="l"><span class="en">Sold on the curve</span><span class="zh">曲线发售量</span></div></div>
-      <div class="card stat"><div class="n">2.5%</div><div class="l"><span class="en">Curve fee (buy / sell-back)</span><span class="zh">曲线手续费（买入 / 卖回）</span></div></div>
-      <div class="card stat"><div class="n">2% + 2%</div><div class="l"><span class="en">DEX tax after graduation (buy / sell)</span><span class="zh">毕业后 DEX 税（买 / 卖）</span></div></div>
+      <div class="card stat rv"><div class="n">88.8 <span class="en">T</span><span class="zh">万亿</span></div><div class="l"><span class="en">Total supply $QQAI</span><span class="zh">$QQAI 总供应量</span></div></div>
+      <div class="card stat rv"><div class="n">59.94 <span class="en">T</span><span class="zh">万亿</span></div><div class="l"><span class="en">Sold on the curve</span><span class="zh">曲线发售量</span></div></div>
+      <div class="card stat rv"><div class="n">2.5%</div><div class="l"><span class="en">Curve fee (buy / sell-back)</span><span class="zh">曲线手续费（买入 / 卖回）</span></div></div>
+      <div class="card stat rv"><div class="n">2% + 2%</div><div class="l"><span class="en">DEX tax after graduation (buy / sell)</span><span class="zh">毕业后 DEX 税（买 / 卖）</span></div></div>
     </div>
     <div class="grid g3" style="margin-top:16px">
-      <div class="card">
+      <div class="card rv">
         <h3><span class="en">Two ways to pay</span><span class="zh">两种支付方式</span></h3>
         <p class="en">BNB natively, or USDT converted at the real-time BNB/USD rate at the moment of purchase. One curve, one price for everyone.</p>
         <p class="zh">可直接使用 BNB，或使用 USDT 按购买时刻的实时 BNB/USD 汇率换算。一条曲线，所有人同一个价格。</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <h3><span class="en">Agent ID gate</span><span class="zh">Agent ID 门槛</span></h3>
         <p class="en">Buying on the curve requires a Binance Agent ID. The gate keeps the launch focused on the agent ecosystem from day one.</p>
         <p class="zh">在曲线上购买需持有 Binance Agent ID。该门槛让本次发射从第一天起就聚焦于智能体生态。</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <h3><span class="en">LP burned at graduation</span><span class="zh">毕业时 LP 销毁</span></h3>
         <p class="en">At graduation the liquidity moves to the QQAI/WBNB and QQAI/USDT PancakeSwap pools and the LP tokens are burned 100% — the liquidity cannot be pulled.</p>
         <p class="zh">毕业时流动性进入 QQAI/WBNB 与 QQAI/USDT 两个 PancakeSwap 池，LP 代币 100% 销毁——流动性无法被撤走。</p>
@@ -211,45 +394,48 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
 
   <!-- TOKENOMICS -->
   <section id="tokenomics">
-    <h2><span class="en">Tokenomics</span><span class="zh">代币经济学</span></h2>
-    <p class="secsub en">Total effective supply is fixed at 88.8 trillion $QQAI. Two thirds are sold publicly on the curve; nothing is sold privately.</p>
-    <p class="secsub zh">总有效供应量固定为 88.8 万亿 $QQAI。三分之二通过曲线公开出售；没有任何私下出售。</p>
-    <div class="tokbar">
-      <i style="width:67.5%;background:linear-gradient(90deg,var(--acc),var(--acc2))"></i>
-      <i style="width:22.5%;background:var(--grn)"></i>
-      <i style="width:5%;background:var(--gold)"></i>
-      <i style="width:5%;background:#64748f"></i>
+    <div class="eyebrow rv"><span class="en">Supply</span><span class="zh">供应</span></div>
+    <h2 class="rv"><span class="en">Tokenomics</span><span class="zh">代币经济学</span></h2>
+    <p class="secsub rv en">Total effective supply is fixed at 88.8 trillion $QQAI. Two thirds are sold publicly on the curve; nothing is sold privately.</p>
+    <p class="secsub rv zh">总有效供应量固定为 88.8 万亿 $QQAI。三分之二通过曲线公开出售；没有任何私下出售。</p>
+    <div class="tokbar rv">
+      <i style="width:67.5%;background:linear-gradient(90deg,var(--gold2),var(--gold),var(--amber))"></i>
+      <i style="width:22.5%;background:linear-gradient(90deg,#3ecf9a,var(--grn))"></i>
+      <i style="width:5%;background:#8d99ae"></i>
+      <i style="width:5%;background:#4a5468"></i>
     </div>
-    <table>
-      <tr><th><span class="en">Allocation</span><span class="zh">分配</span></th><th><span class="en">Details</span><span class="zh">说明</span></th><th><span class="en">Amount</span><span class="zh">数量</span></th></tr>
-      <tr>
-        <td><span class="en">Bonding curve sale</span><span class="zh">联合曲线发售</span></td>
-        <td style="text-align:left;font-weight:400;color:var(--mut)"><span class="en">Sold publicly on the curve for BNB / USDT — 67.5% of supply</span><span class="zh">通过曲线以 BNB / USDT 公开出售——占供应量 67.5%</span></td>
-        <td>59.94 <span class="en">T</span><span class="zh">万亿</span></td>
-      </tr>
-      <tr>
-        <td><span class="en">Liquidity reserve</span><span class="zh">流动性储备</span></td>
-        <td style="text-align:left;font-weight:400;color:var(--mut)"><span class="en">Paired at graduation across the two PancakeSwap pools (QQAI/WBNB + QQAI/USDT) — 22.5%</span><span class="zh">毕业时分配至两个 PancakeSwap 池（QQAI/WBNB + QQAI/USDT）配对——占 22.5%</span></td>
-        <td>19.98 <span class="en">T</span><span class="zh">万亿</span></td>
-      </tr>
-      <tr>
-        <td><span class="en">Team</span><span class="zh">团队</span></td>
-        <td style="text-align:left;font-weight:400;color:var(--mut)"><span class="en">365-day cliff, then linear vesting over 4 years — 5%</span><span class="zh">365 天悬崖期，之后 4 年线性释放——占 5%</span></td>
-        <td>4.44 <span class="en">T</span><span class="zh">万亿</span></td>
-      </tr>
-      <tr>
-        <td><span class="en">Reserve &amp; marketing</span><span class="zh">储备与市场</span></td>
-        <td style="text-align:left;font-weight:400;color:var(--mut)"><span class="en">Ecosystem growth, listings and marketing — 5%</span><span class="zh">生态增长、上所与市场推广——占 5%</span></td>
-        <td>4.44 <span class="en">T</span><span class="zh">万亿</span></td>
-      </tr>
-      <tr>
-        <td><span class="en">Total</span><span class="zh">总计</span></td>
-        <td style="text-align:left;font-weight:400;color:var(--mut)"><span class="en">Fixed effective supply</span><span class="zh">固定有效供应量</span></td>
-        <td>88.8 <span class="en">T</span><span class="zh">万亿</span></td>
-      </tr>
-    </table>
+    <div class="grid g4">
+      <div class="card tokcard rv">
+        <span class="dotc" style="background:linear-gradient(135deg,var(--gold2),var(--amber))"></span>
+        <h3><span class="en">Bonding curve sale</span><span class="zh">联合曲线发售</span></h3>
+        <div class="amt">59.94 <span class="en">T</span><span class="zh">万亿</span></div>
+        <div class="pct">67.5%</div>
+        <p style="margin-top:8px"><span class="en">Sold publicly on the curve for BNB / USDT.</span><span class="zh">通过曲线以 BNB / USDT 公开出售。</span></p>
+      </div>
+      <div class="card tokcard rv">
+        <span class="dotc" style="background:var(--grn)"></span>
+        <h3><span class="en">Liquidity reserve</span><span class="zh">流动性储备</span></h3>
+        <div class="amt">19.98 <span class="en">T</span><span class="zh">万亿</span></div>
+        <div class="pct">22.5%</div>
+        <p style="margin-top:8px"><span class="en">Paired at graduation across the two PancakeSwap pools (QQAI/WBNB + QQAI/USDT).</span><span class="zh">毕业时分配至两个 PancakeSwap 池（QQAI/WBNB + QQAI/USDT）配对。</span></p>
+      </div>
+      <div class="card tokcard rv">
+        <span class="dotc" style="background:#8d99ae"></span>
+        <h3><span class="en">Team</span><span class="zh">团队</span></h3>
+        <div class="amt">4.44 <span class="en">T</span><span class="zh">万亿</span></div>
+        <div class="pct">5%</div>
+        <p style="margin-top:8px"><span class="en">365-day cliff, then linear vesting over 4 years.</span><span class="zh">365 天悬崖期，之后 4 年线性释放。</span></p>
+      </div>
+      <div class="card tokcard rv">
+        <span class="dotc" style="background:#4a5468"></span>
+        <h3><span class="en">Reserve &amp; marketing</span><span class="zh">储备与市场</span></h3>
+        <div class="amt">4.44 <span class="en">T</span><span class="zh">万亿</span></div>
+        <div class="pct">5%</div>
+        <p style="margin-top:8px"><span class="en">Ecosystem growth, listings and marketing.</span><span class="zh">生态增长、上所与市场推广。</span></p>
+      </div>
+    </div>
     <div class="grid g2" style="margin-top:16px">
-      <div class="card">
+      <div class="card rv">
         <h3><span class="en">Fees &amp; taxes</span><span class="zh">费用与税收</span></h3>
         <ul>
           <li class="en">Curve fee: <b>2.5%</b> on every buy and sell-back while the curve is live.</li>
@@ -260,7 +446,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
           <li class="zh">没有其他隐藏收费。曲线定价公式固定写在合约中。</li>
         </ul>
       </div>
-      <div class="card">
+      <div class="card rv">
         <h3><span class="en">What graduation means</span><span class="zh">毕业意味着什么</span></h3>
         <ul>
           <li class="en">Curve trading closes; the sale cannot be re-opened.</li>
@@ -276,56 +462,57 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--dim);fon
 
   <!-- FAQ -->
   <section id="faq">
-    <h2><span class="en">FAQ</span><span class="zh">常见问题</span></h2>
-    <details>
-      <summary><span class="en">When does the sale open?</span><span class="zh">发售何时开启？</span></summary>
+    <div class="eyebrow rv"><span class="en">Questions</span><span class="zh">问答</span></div>
+    <h2 class="rv"><span class="en">FAQ</span><span class="zh">常见问题</span></h2>
+    <details class="rv">
+      <summary><span><span class="en">When does the sale open?</span><span class="zh">发售何时开启？</span></span><span class="chev">▾</span></summary>
       <p class="en">Dec 2, 2026 at 08:00 (UTC+8). Until then this page shows the pre-launch state and buying is disabled.</p>
       <p class="zh">2026 年 12 月 2 日 08:00（UTC+8，北京时间）。在此之前本页为预发布状态，购买功能关闭。</p>
     </details>
-    <details>
-      <summary><span class="en">What do I need to buy?</span><span class="zh">购买需要什么？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">What do I need to buy?</span><span class="zh">购买需要什么？</span></span><span class="chev">▾</span></summary>
       <p class="en">A BNB Chain wallet holding a Binance Agent ID, plus BNB or USDT to pay with. The Agent ID gate is checked on every curve purchase.</p>
       <p class="zh">一个持有 Binance Agent ID 的 BNB 链钱包，以及用于支付的 BNB 或 USDT。每次在曲线购买时都会校验 Agent ID 门槛。</p>
     </details>
-    <details>
-      <summary><span class="en">How does paying with USDT work?</span><span class="zh">用 USDT 支付如何运作？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">How does paying with USDT work?</span><span class="zh">用 USDT 支付如何运作？</span></span><span class="chev">▾</span></summary>
       <p class="en">Your USDT is converted at the real-time BNB/USD rate at the moment of purchase, and you receive $QQAI at the same curve price as a BNB buyer. One curve, one price — the payment currency does not change the price you get.</p>
       <p class="zh">你的 USDT 会按购买时刻的实时 BNB/USD 汇率换算，你按与 BNB 买家相同的曲线价格收到 $QQAI。一条曲线、一个价格——支付货币不会改变你获得的价格。</p>
     </details>
-    <details>
-      <summary><span class="en">How is the price determined?</span><span class="zh">价格如何决定？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">How is the price determined?</span><span class="zh">价格如何决定？</span></span><span class="chev">▾</span></summary>
       <p class="en">By the bonding curve formula in the contract. The price starts low and rises with every purchase as the remaining curve supply shrinks; sell-backs lower it again. The starting price will be published here at launch together with the contract address.</p>
       <p class="zh">由合约中的联合曲线公式决定。价格从低位起步，随着购买增加、曲线剩余供应减少而上涨；卖回会使价格回落。起始价格将在上线时与合约地址一同在本页公布。</p>
     </details>
-    <details>
-      <summary><span class="en">Can I sell before graduation?</span><span class="zh">毕业前可以卖出吗？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">Can I sell before graduation?</span><span class="zh">毕业前可以卖出吗？</span></span><span class="chev">▾</span></summary>
       <p class="en">Yes. Until the curve fills, you can sell $QQAI back into the curve at the current curve price at any time. The 2.5% curve fee applies to sell-backs as well as buys.</p>
       <p class="zh">可以。在曲线填满之前，你可随时按当前曲线价格将 $QQAI 卖回曲线。2.5% 曲线手续费同时适用于买入与卖回。</p>
     </details>
-    <details>
-      <summary><span class="en">What happens when the curve fills?</span><span class="zh">曲线填满后会发生什么？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">What happens when the curve fills?</span><span class="zh">曲线填满后会发生什么？</span></span><span class="chev">▾</span></summary>
       <p class="en">Graduation is automatic. The funds raised on the curve and the 19.98 T liquidity reserve are paired into two PancakeSwap pools — QQAI/WBNB and QQAI/USDT — the LP tokens are burned 100%, and $QQAI starts trading openly on the DEX with a 2% buy / 2% sell tax.</p>
       <p class="zh">毕业自动触发。曲线募集的资金与 19.98 万亿流动性储备将配对进入两个 PancakeSwap 池——QQAI/WBNB 与 QQAI/USDT——LP 代币 100% 销毁，$QQAI 随即在 DEX 上公开交易，买入 / 卖出税各 2%。</p>
     </details>
-    <details>
-      <summary><span class="en">What is the contract address?</span><span class="zh">合约地址是什么？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">What is the contract address?</span><span class="zh">合约地址是什么？</span></span><span class="chev">▾</span></summary>
       <p class="en">The contracts are not deployed yet. The official token and curve addresses will be announced on this page at launch. Any $QQAI address circulating before that announcement is not official — do not trade it.</p>
       <p class="zh">合约尚未部署。官方代币与曲线地址将在上线时于本页公布。在此之前流传的任何 $QQAI 地址均非官方——请勿交易。</p>
     </details>
-    <details>
-      <summary><span class="en">Is there a presale or private round?</span><span class="zh">有预售或私募轮次吗？</span></summary>
+    <details class="rv">
+      <summary><span><span class="en">Is there a presale or private round?</span><span class="zh">有预售或私募轮次吗？</span></span><span class="chev">▾</span></summary>
       <p class="en">No. 59.94 T — 67.5% of the supply — is sold only on the public bonding curve, at the same price rule for everyone. The only other allocations are the liquidity reserve, the team vesting allocation and the reserve &amp; marketing allocation listed in Tokenomics.</p>
       <p class="zh">没有。59.94 万亿——占供应量 67.5%——只通过公开联合曲线出售，所有人适用同一套定价规则。其余分配仅为代币经济学中列明的流动性储备、团队归属分配与储备及市场分配。</p>
     </details>
   </section>
 
-  <div class="warn">
+  <div class="warn rv">
     <span class="en"><b>Risk notice:</b> $QQAI is a high-risk crypto asset. The bonding curve price can move down as well as up, and you may lose some or all of the funds you spend. Nothing on this page is financial advice. Verify the contract address on this page at launch before trading — impostor tokens are common.</span>
     <span class="zh"><b>风险提示：</b>$QQAI 是高风险加密资产。联合曲线价格可涨可跌，你可能损失部分或全部投入资金。本页内容不构成任何财务建议。上线后交易前，请务必核对本页公布的合约地址——假冒代币十分常见。</span>
   </div>
 
   <footer>
-    <div class="prow" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <span>QQAI · $QQAI · BNB Chain (BSC, chainId 56)</span>
       <span><a href="llms.txt">llms.txt</a> · <a href="agent.json">agent.json</a></span>
     </div>
@@ -361,6 +548,31 @@ try{
   if(saved === "zh" || saved === "en") setLang(saved);
   else if((navigator.language||"").toLowerCase().indexOf("zh") === 0) setLang("zh");
 }catch(e){}
+
+/* sale panel decorative toggles (pre-launch: visual only, buy stays disabled) */
+function pairToggle(a, b){
+  var ea = document.getElementById(a), eb = document.getElementById(b);
+  if(!ea || !eb) return;
+  ea.addEventListener("click", function(){ ea.classList.add("on"); eb.classList.remove("on"); });
+  eb.addEventListener("click", function(){ eb.classList.add("on"); ea.classList.remove("on"); });
+}
+pairToggle("tabBuy", "tabSell");
+pairToggle("payBnb", "payUsdt");
+
+/* reveal on scroll */
+var reduced = false;
+try{ reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
+var rvEls = document.querySelectorAll(".rv");
+if(reduced || !("IntersectionObserver" in window)){
+  for(var i = 0; i < rvEls.length; i++) rvEls[i].classList.add("in");
+}else{
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {threshold: .12});
+  rvEls.forEach(function(el){ io.observe(el); });
+}
 </script>
 </body>
 </html>
