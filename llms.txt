@@ -8,6 +8,7 @@ never by wallet address.
 
 Website: https://qqai.pages.dev
 Machine-readable data: https://qqai.pages.dev/agent.json
+Official X: https://x.com/QQAgent_BNB (@QQAgent_BNB)
 
 ## Status
 
@@ -175,6 +176,7 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
 
 官网：https://qqai.pages.dev
 机器可读数据：https://qqai.pages.dev/agent.json
+官方 X：https://x.com/QQAgent_BNB（@QQAgent_BNB）
 
 ### 状态
 
