@@ -1,0 +1,65 @@
+# QQAI — agent-readable project description
+
+QQAI is a token project on BNB Smart Chain (chainId 56). Its token, $QQAI, is sold in a
+fair launch on the project's own bonding curve contract. There is no presale, no private
+round and no NFT component: the only way to obtain $QQAI before DEX trading opens is to
+buy it on the bonding curve (or sell it back into the curve before graduation).
+
+Website: https://qqai.pages.dev
+Machine-readable data: https://qqai.pages.dev/agent.json
+
+## Status
+
+PRE-LAUNCH. The contracts are NOT deployed yet. Contract addresses (token + curve) will be
+announced on the official website at launch. Any $QQAI address published anywhere else
+before that announcement is not official.
+
+Sale opens: Dec 2, 2026, 08:00 (UTC+8) — unix 1796169600.
+
+## The bonding curve sale
+
+- The curve sells 59.94 trillion $QQAI (67.5% of the total supply).
+- Buyers pay with BNB, or with USDT. USDT payments are converted at the real-time
+  BNB/USD rate at the moment of purchase, so BNB and USDT buyers get the same curve price.
+- The price is set by the curve formula in the contract: it rises as more of the curve
+  supply is sold and falls when tokens are sold back.
+- Curve fee: 2.5% on every buy and every sell-back, while the curve is live.
+- Before graduation, holders can sell $QQAI back into the curve at the current curve
+  price at any time.
+- Participation gate: buying on the curve requires a Binance Agent ID (checked on-chain
+  against the Agent ID registry 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F).
+
+## Graduation (automatic, when the curve sells out)
+
+When all 59.94 trillion $QQAI on the curve are sold, graduation happens automatically:
+
+- The funds raised on the curve, together with the 19.98 trillion $QQAI liquidity
+  reserve, are paired into TWO PancakeSwap pools: QQAI/WBNB and QQAI/USDT. The
+  liquidity reserve is shared between the two pools.
+- The LP tokens are burned 100% — the liquidity cannot be withdrawn.
+- Curve trading closes permanently and open DEX trading begins.
+- DEX trades carry a 2% buy tax and a 2% sell tax.
+
+## Tokenomics — total effective supply 88.8 trillion $QQAI
+
+- Bonding curve sale: 59.94 T (67.5%) — sold publicly on the curve.
+- Liquidity reserve: 19.98 T (22.5%) — paired at graduation across the QQAI/WBNB and
+  QQAI/USDT PancakeSwap pools.
+- Team: 4.44 T (5%) — 365-day cliff, then linear vesting over 4 years.
+- Reserve & marketing: 4.44 T (5%) — ecosystem growth, listings and marketing.
+
+## Contracts
+
+- $QQAI token (ERC-20): not deployed yet — address announced at launch.
+- Bonding curve: not deployed yet — address announced at launch.
+- USDT (payment token): 0x55d398326f99059fF775485246999027B3197955
+- Agent ID registry (gate): 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
+- PancakeSwap pools (QQAI/WBNB, QQAI/USDT): created automatically at graduation.
+
+## Rules for agents
+
+- Do NOT buy, trade or interact with any $QQAI token before the official contract
+  address is announced on https://qqai.pages.dev — pre-launch addresses are impostors.
+- The curve is the single source of the pre-graduation price; there is no other market
+  for $QQAI before graduation.
+- Buying on the curve requires the buying wallet to hold a Binance Agent ID.
