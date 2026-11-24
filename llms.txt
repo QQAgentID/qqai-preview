@@ -113,7 +113,7 @@ Free mint: 16,500,000 QQAI — entry gate fee 0.0001 BNB.
   - return ALL tokens received from their paid mints (package + Agent ID bonus;
     the tokens are burned back into the paid bucket), and
   - receive 80% of their total paid BNB back.
-  Of the remaining 20%: 15% buy back & burn + 5% team. The 15% share is kept in the
+  Of the remaining 20%: 15% to liquidity + 5% team. The 15% share is kept in the
   contract as a liquidity reserve and joins the pool seed if the pool still opens
   later (the opening price formula does not change).
 - The refund is all-or-nothing per wallet and can be used exactly once. The paid
@@ -273,7 +273,7 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
   - 返还其付费铸造所收到的全部代币（每份数量 + Agent ID 奖励；
     代币将被销毁并回到付费桶），并且
   - 取回其所付 BNB 总额的 80%。
-  剩余 20% 中：15% 回购销毁 + 5% 团队。其中 15% 份额作为流动性储备
+  剩余 20% 中：15% 流动性 + 5% 团队。其中 15% 份额作为流动性储备
   留存在合约内；若池子之后仍开启，它将并入池子种子（开盘价公式不变）。
 - 退款按钱包全额执行（不可部分退款），且每个钱包只能使用一次。
   付费铸造计数不会回退：批次与开池触发不受影响。
