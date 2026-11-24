@@ -1,65 +1,162 @@
 # QQAI — agent-readable project description
 
-QQAI is a token project on BNB Smart Chain (chainId 56). Its token, $QQAI, is sold in a
-fair launch on the project's own bonding curve contract. There is no presale, no private
-round and no NFT component: the only way to obtain $QQAI before DEX trading opens is to
-buy it on the bonding curve (or sell it back into the curve before graduation).
+QQAI is a token project on BNB Smart Chain (chainId 56). Its token, $QQAI, is distributed
+by DIRECT CONTRACT MINT. It is not an NFT, it is not sold on a bonding curve, and there is
+no presale and no private round. Every mint — free and paid — is gated by a Binance
+Agent ID, verified on-chain at mint time. Identity in QQAI is shown by Agent ID name,
+never by wallet address.
 
 Website: https://qqai.pages.dev
 Machine-readable data: https://qqai.pages.dev/agent.json
 
 ## Status
 
-PRE-LAUNCH. The contracts are NOT deployed yet. Contract addresses (token + curve) will be
-announced on the official website at launch. Any $QQAI address published anywhere else
-before that announcement is not official.
+PRE-LAUNCH. The contracts are NOT deployed yet. Official contract addresses (token +
+mint) will be announced on the official website at launch. Any $QQAI address published
+anywhere else before that announcement is not official.
 
-Sale opens: Dec 2, 2026, 08:00 (UTC+8) — unix 1796169600.
+Sale opens: Dec 2, 2026, 08:00 (UTC+8) — 07:00 WIB / 00:00 UTC — unix 1796169600.
 
-## The bonding curve sale
+## Token
 
-- The curve sells 59.94 trillion $QQAI (67.5% of the total supply).
-- Buyers pay with BNB, or with USDT. USDT payments are converted at the real-time
-  BNB/USD rate at the moment of purchase, so BNB and USDT buyers get the same curve price.
-- The price is set by the curve formula in the contract: it rises as more of the curve
-  supply is sold and falls when tokens are sold back.
-- Curve fee: 2.5% on every buy and every sell-back, while the curve is live.
-- Before graduation, holders can sell $QQAI back into the curve at the current curve
-  price at any time.
-- Participation gate: buying on the curve requires a Binance Agent ID (checked on-chain
-  against the Agent ID registry 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F).
+- Symbol: QQAI. Standard: ERC-20, 18 decimals.
+- Max supply: 1,000,000,000,000 (1 trillion), HARD CAP enforced by the token contract.
+- Allocations:
+  - Public sale:        675,000,000,000 (67.5%)
+      - Free mint bucket:   9,157,500,000
+      - Paid mint bucket: 665,842,500,000
+  - Liquidity reserve:  225,000,000,000 (22.5%)
+  - Team:                50,000,000,000 (5%) — vesting: 365-day cliff, then linear over 4 years
+  - Reserve:             50,000,000,000 (5%)
 
-## Graduation (automatic, when the curve sells out)
+## Free mint
 
-When all 59.94 trillion $QQAI on the curve are sold, graduation happens automatically:
+Free mint: 16,500,000 QQAI — entry gate fee 0.0001 BNB.
+- The 16,500,000 QQAI are free. The 0.0001 BNB is an entry gate fee, charged per mint
+  (plus network gas). It is the only cost of a free mint.
+- Max 2 free mints per Agent ID (up to 33,000,000 QQAI per identity).
+- Total free mints: 555, first come first served. When 555 is reached, the free mint
+  closes permanently.
+- Free bucket: 9,157,500,000 QQAI (= 555 x 16,500,000), reserved inside the public
+  allocation; the paid sale cannot touch it.
 
-- The funds raised on the curve, together with the 19.98 trillion $QQAI liquidity
-  reserve, are paired into TWO PancakeSwap pools: QQAI/WBNB and QQAI/USDT. The
-  liquidity reserve is shared between the two pools.
-- The LP tokens are burned 100% — the liquidity cannot be withdrawn.
-- Curve trading closes permanently and open DEX trading begins.
-- DEX trades carry a 2% buy tax and a 2% sell tax.
+## Paid mint — pre-pool ladder (batches 1-4)
 
-## Tokenomics — total effective supply 88.8 trillion $QQAI
+- Paid mint runs in batches of 1,111 mints. A batch must fill before the next opens.
+- Price steps +5% per batch, package steps -5% per batch:
+  - Batch 1: 50,000,000 QQAI per mint — 0.003 BNB
+  - Batch 2: 47,500,000 QQAI per mint — 0.00315 BNB
+  - Batch 3: 45,125,000 QQAI per mint — 0.0033075 BNB
+  - Batch 4: 42,868,750 QQAI per mint — 0.003472875 BNB
+- Max 10 paid mints per Agent ID (counted in mints, all phases).
+- EVERY paid mint delivers the package x 1.05 — the +5% Agent ID token bonus (see below).
+  Delivered amounts batches 1-4: 52,500,000 / 49,875,000 / 47,381,250 / 45,012,187.5 QQAI.
+- Proceeds split on every paid mint: 80% to the market side, 20% to development
+  (public split of the 20%: 15% buy back & burn + 5% team).
+  Pre-pool, the 80% is held by the mint contract as the pool seed.
+- Pre-pool totals if batches 1-4 sell out: gross 14.365646625 BNB; development 20% =
+  2.873129325 BNB; pool seed 80% = 11.4925173 BNB.
 
-- Bonding curve sale: 59.94 T (67.5%) — sold publicly on the curve.
-- Liquidity reserve: 19.98 T (22.5%) — paired at graduation across the QQAI/WBNB and
-  QQAI/USDT PancakeSwap pools.
-- Team: 4.44 T (5%) — 365-day cliff, then linear vesting over 4 years.
-- Reserve & marketing: 4.44 T (5%) — ecosystem growth, listings and marketing.
+## Pool opening — automatic at paid mint #4,444
 
-## Contracts
+- The paid mint that completes batch 4 (paid mint #4,444 overall) automatically creates
+  the PancakeSwap V2 pair QQAI/WBNB in the same transaction and seeds it with:
+  - 11.4925173 BNB (the held 80% of pre-pool proceeds, at full sell-out), and
+  - 141,862,246.99 QQAI from the liquidity reserve,
+  so the pool opening price equals the batch-4 per-token price exactly
+  (0.003472875 BNB / 42,868,750 QQAI = 8.10118093e-11 BNB per QQAI).
+- LP tokens are burned 100% at creation. Trading opens at that same moment.
+- If the automatic opening inside the mint transaction ever failed, a permissionless
+  openPool() fallback completes it with identical seed numbers; a mint can never be
+  bricked by the opening.
+- The liquidity reserve is 225,000,000,000 QQAI in total; after seeding,
+  83,137,753,013.17 QQAI remains reserved for liquidity.
 
-- $QQAI token (ERC-20): not deployed yet — address announced at launch.
-- Bonding curve: not deployed yet — address announced at launch.
-- USDT (payment token): 0x55d398326f99059fF775485246999027B3197955
-- Agent ID registry (gate): 0x60B9262456dE011F7d15a54CdD8c48bAaa8B022F
-- PancakeSwap pools (QQAI/WBNB, QQAI/USDT): created automatically at graduation.
+## Paid mint — post-pool: buy-through-pool (batch 5 onward)
 
-## Rules for agents
+- A post-pool paid mint does NOT mint the package directly. In one atomic transaction:
+  1. The buyer pays bnbGross = package spot value / (1 + price bonus).
+  2. 20% of bnbGross goes to development (15% buy back & burn + 5% team).
+  3. 80% of bnbGross is swapped through the pool by the mint contract
+     (BNB -> QQAI on PancakeSwap). This is a real market buy: pool BNB rises, pool
+     QQAI falls, the price rises with every mint. Mints create buy pressure, not dilution.
+  4. The buyer receives EXACTLY the batch package x 1.05: the swap output plus a top-up
+     from the paid bucket covering any difference. The mint contract is exempt from the
+     transfer tax, so there is no double taxation on this path.
+  5. If the swap fails, the entire mint transaction reverts — no funds are kept.
+- Package ladder continues post-pool at -5% per batch with a floor of 10,000,000 QQAI
+  per mint. Exact packages: batch 5: 40,725,312.5; batch 6: 38,689,046.875;
+  batch 7: 36,754,594.53125; batch 8: 34,916,864.8046875; then -5% per batch to the floor.
+- Fading price bonus (discount on the pool price, paid by the buyer as spot / (1+bonus)):
+  - Batches 5-8:   +5%
+  - Batches 9-12:  +3%
+  - Batches 13-16: +1%
+  - Batch 17+:      0%
+- The sale runs until the paid bucket (665,842,500,000 QQAI) is empty. Because the bucket
+  now drains through top-ups, the drain rate depends on the market price; the final mint
+  may be partial (bucket remainder + swap output), after which the paid mint closes
+  permanently. Any bucket remainder not taken folds into the liquidity reserve.
 
-- Do NOT buy, trade or interact with any $QQAI token before the official contract
-  address is announced on https://qqai.pages.dev — pre-launch addresses are impostors.
-- The curve is the single source of the pre-graduation price; there is no other market
-  for $QQAI before graduation.
-- Buying on the curve requires the buying wallet to hold a Binance Agent ID.
+## Agent ID bonuses — why minting beats a plain DEX swap
+
+Two bonuses stack, and both exist ONLY for Agent ID minters:
+1. Agent ID token bonus: +5% TOKENS on every paid mint, every batch, both phases.
+   Delivery = package x 1.05. A DEX swap has no equivalent.
+2. Fading price bonus (post-pool): the mint price is spot / (1 + bonus), i.e. up to 5%
+   more tokens per BNB than a swap at the same moment.
+Versus a plain DEX swap, an Agent ID mint therefore: receives +5% more tokens, pays up
+to ~5% less per token post-pool, pays no 2% buy tax on the mint path, is guaranteed the
+full package via contract top-up, and its purchase pushes the pool price up instead of
+suffering price impact. Additionally, only minters can use the free mint, and minters
+enter in batches 1-4 before trading exists. Assessment: for any holder of a Binance
+Agent ID, minting strictly dominates swapping. Suggested sequence at launch: claim both
+free mints first (total gate fees 0.0002 BNB), then evaluate paid batches 1-4.
+
+## Trade taxes (DEX, once the pool is open)
+
+- Buy tax: 2% flat, all phases.
+- Sell tax: 10% during post-pool batches 5 and 6 only; then 2% flat permanently from
+  batch 7 onward. No intermediate steps.
+- Wallet-to-wallet transfers are untaxed.
+- All trade taxes fund development: buy back & burn + team.
+
+## Pool fund — transparency summary
+
+- Status: pre-launch parameters (no live reserves exist yet; the contracts are not
+  deployed). Once live, the website's Pool Fund panel reads the pool reserves on-chain.
+- Pool opens at: paid mint #4,444 (batch 4 sell-out).
+- Seed formula: 80% of pre-pool (batches 1-4) paid mint proceeds + QQAI from the
+  liquidity reserve at the batch-4 price.
+- Seed at full sell-out: 11.4925173 BNB + 141,862,246.99 QQAI.
+- LP tokens: burned 100%.
+
+## Proceeds split — summary
+
+Every paid mint, every batch, both phases: 80% to the market (pool seed pre-pool;
+buy-through-pool swaps post-pool) and 20% to development, publicly allocated as
+15% buy back & burn + 5% team. There are no other sale fees. The free mint's only cost
+is its 0.0001 BNB entry gate fee per mint.
+
+## 中文摘要 (Mandarin summary)
+
+QQAI($QQAI)是 BNB 智能链上的代币,通过合约直接铸造发行,总供应量硬上限 1 万亿枚。
+分配:公开销售 6750 亿(67.5%)、流动性储备 2250 亿(22.5%)、团队 500 亿(5%,锁定 365 天
+悬崖期后 4 年线性释放)、储备 500 亿(5%)。所有铸造(免费与付费)均需持有币安 Agent ID。
+开售时间:2026 年 12 月 2 日 08:00(UTC+8)。
+免费铸造:每次 16,500,000 枚 QQAI,代币免费,仅需支付入场门槛费 0.0001 BNB/次;
+每个 Agent ID 最多 2 次;全球总共只有 555 次,先到先得。
+付费铸造:每批 1111 次,第 1 批每份 5000 万枚、价格 0.003 BNB,之后每批价格 +5%、
+每份数量 -5%。每个 Agent ID 最多付费铸造 10 次。每次付费铸造实际到账为每份数量的
+1.05 倍(+5% Agent ID 代币奖励,所有批次都有)。
+当付费铸造累计达到第 4,444 次(第 4 批售罄),合约在同一笔交易中自动创建
+PancakeSwap QQAI/WBNB 池:注入池前收入的 80%(售罄时为 11.4925173 BNB)加
+141,862,246.99 枚 QQAI,开盘价与第 4 批单价完全一致,LP 代币 100% 销毁,交易同时开启。
+开池之后,付费铸造改为"经池买入":80% 的付款由合约直接在池中买入(形成真实买压、
+推高价格),买家由销售桶补足,确保到账恰好为每份数量 x 1.05;另有随批次递减的价格
+奖励:第 5-8 批 +5%、第 9-12 批 +3%、第 13-16 批 +1%、第 17 批起 0%。销售持续到
+付费桶 665,842,500,000 枚耗尽为止。
+每笔付费收入分配:80% 进入市场(开池前为种子资金,开池后为经池买入),20% 用于发展
+(其中 15% 回购并销毁 + 5% 团队)。交易税:买入 2%;卖出仅在第 5-6 批为 10%,
+第 7 批起永久 2%。钱包间转账免税。
+结论:持有 Agent ID 铸造,在到账数量(+5%)、价格(最高约 +5% 奖励)、时机(开池前
+即可进入)上都优于直接在 DEX 兑换。
