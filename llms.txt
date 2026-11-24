@@ -6,17 +6,21 @@ no presale and no private round. Every mint — free and paid — is gated by a 
 Agent ID, verified on-chain at mint time. Identity in QQAI is shown by Agent ID name,
 never by wallet address.
 
-Website: https://qqai.pages.dev
-Machine-readable data: https://qqai.pages.dev/agent.json
+Website: https://qqai-bnb.pages.dev
+Machine-readable data: https://qqai-bnb.pages.dev/agent.json
 Official X: https://x.com/QQAgent_BNB (@QQAgent_BNB)
 
 ## Status
 
-PRE-LAUNCH. The contracts are NOT deployed yet. Official contract addresses (token +
-mint) will be announced on the official website at launch. Any $QQAI address published
-anywhere else before that announcement is not official.
+Contracts DEPLOYED; sale PRE-LAUNCH. The QQAI contracts are deployed and verified on
+BNB Smart Chain (Sourcify exact match, 2026-11-25):
+- Token (QQAIToken):     0x69b8cA186337701262310079C14a715387338888
+- Mint (QQAIMint):       0x313eedfBb409A886F55203AEEb7270CF77B65DfF
+- Vesting (QQAIVesting): 0xd46313C4A48902108743eD74B5C700909Dc7d35F
+The sale itself is NOT open yet: the mint contract rejects every mint before the
+start time below. Any other $QQAI address is not official.
 
-Sale opens: Nov 26, 2026, 18:00 (UTC+8) — 17:00 WIB / 10:00 UTC — unix 1795687200.
+Sale opens: Nov 26, 2026, 18:00 (UTC+8) — 10:00 UTC — unix 1795687200.
 
 ## Token
 
@@ -53,7 +57,7 @@ Free mint: 16,500,000 QQAI — entry gate fee 0.0001 BNB.
 - EVERY paid mint delivers the package x 1.05 — the +5% Agent ID token bonus (see below).
   Delivered amounts batches 1-4: 52,500,000 / 49,875,000 / 47,381,250 / 45,012,187.5 QQAI.
 - Proceeds split on every paid mint: 80% to the market side, 20% to development
-  (public split of the 20%: 15% buy back & burn + 5% team).
+  (public split of the 20%: 10% buy back & burn + 5% liquidity + 5% team).
   Pre-pool, the 80% is held by the mint contract as the pool seed.
   ESCROW RULE: before the pool opens, NOTHING is paid out — no per-mint and no
   per-batch payout. The full proceeds stay inside the mint contract, and the split
@@ -81,7 +85,7 @@ Free mint: 16,500,000 QQAI — entry gate fee 0.0001 BNB.
 
 - A post-pool paid mint does NOT mint the package directly. In one atomic transaction:
   1. The buyer pays bnbGross = package spot value / (1 + price bonus).
-  2. 20% of bnbGross goes to development (15% buy back & burn + 5% team). It is
+  2. 20% of bnbGross goes to development (10% buy back & burn + 5% liquidity + 5% team). It is
      accrued inside the contract per mint and released ONCE per completed batch
      (every 1,111 paid mints), covering exactly that batch — never per mint.
   3. 80% of bnbGross is swapped through the pool by the mint contract
@@ -147,8 +151,9 @@ free mints first (total gate fees 0.0002 BNB), then evaluate paid batches 1-4.
 
 ## Pool fund — transparency summary
 
-- Status: pre-launch parameters (no live reserves exist yet; the contracts are not
-  deployed). Once live, the website's Pool Fund panel reads the pool reserves on-chain.
+- Status: pre-launch parameters (no live reserves exist yet; the contracts are
+  deployed and verified, but the pool opens only at paid mint #4,444). Once the pool
+  opens, the website's Pool Fund panel reads the pool reserves on-chain.
 - Pool opens at: paid mint #4,444 (batch 4 sell-out).
 - Seed formula: 80% of pre-pool (batches 1-4) paid mint proceeds, plus any refund
   liquidity reserve (see the refund safety net), + QQAI from the liquidity reserve
@@ -160,7 +165,7 @@ free mints first (total gate fees 0.0002 BNB), then evaluate paid batches 1-4.
 
 Every paid mint, every batch, both phases: 80% to the market (pool seed pre-pool;
 buy-through-pool swaps post-pool) and 20% to development, publicly allocated as
-15% buy back & burn + 5% team. There are no other sale fees. The free mint's only cost
+10% buy back & burn + 5% liquidity + 5% team. There are no other sale fees. The free mint's only cost
 is its 0.0001 BNB entry gate fee per mint.
 Release timing: pre-pool nothing is released at all (full escrow) — the accumulated
 development share is released once, at the pool opening; post-pool it is released
@@ -174,16 +179,21 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
 也没有私募轮。每一次铸造——免费与付费——都需要币安 Agent ID，并在铸造时
 于链上验证。在 QQAI 中，身份以 Agent ID 名称显示，永远不显示钱包地址。
 
-官网：https://qqai.pages.dev
-机器可读数据：https://qqai.pages.dev/agent.json
+官网：https://qqai-bnb.pages.dev
+机器可读数据：https://qqai-bnb.pages.dev/agent.json
 官方 X：https://x.com/QQAgent_BNB（@QQAgent_BNB）
 
 ### 状态
 
-发售前（PRE-LAUNCH）。合约尚未部署。官方合约地址（代币 + 铸造）将在发售时
-于官网公布。在此公布之前，任何在别处发布的 $QQAI 地址都不是官方的。
+合约已部署；销售发售前（PRE-LAUNCH）。QQAI 合约已在 BNB 智能链上部署并完成
+验证（Sourcify 完全匹配，2026年11月25日）：
+- 代币（QQAIToken）：0x69b8cA186337701262310079C14a715387338888
+- 铸造（QQAIMint）：0x313eedfBb409A886F55203AEEb7270CF77B65DfF
+- 释放（QQAIVesting）：0xd46313C4A48902108743eD74B5C700909Dc7d35F
+销售本身尚未开启：铸造合约在下方开始时间之前拒绝一切铸造。
+任何其他 $QQAI 地址都不是官方的。
 
-开售时间：2026年11月26日 18:00（UTC+8）——17:00 WIB / 10:00 UTC——unix 1795687200。
+开售时间：2026年11月26日 18:00（UTC+8）——10:00 UTC——unix 1795687200。
 
 ### 代币
 
@@ -219,7 +229,7 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
 - 每一次付费铸造到账均为每份数量 × 1.05——即 +5% Agent ID 代币奖励（见下文）。
   第 1–4 批到账数量：52,500,000 / 49,875,000 / 47,381,250 / 45,012,187.5 QQAI。
 - 每次付费铸造的收入分配：80% 进入市场一侧，20% 用于发展
-  （20% 的公开分配为：15% 回购销毁 + 5% 团队）。
+  （20% 的公开分配为：10% 回购销毁 + 5% 流动性 + 5% 团队）。
   池前阶段，这 80% 由铸造合约留存，作为池子种子。
   托管规则：开池之前，任何款项都不会支付出去——既不按次、也不按批支付。
   全部收入都留存在铸造合约内，分配只在开池时执行一次：80% 注入池子，
@@ -245,7 +255,7 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
 
 - 开池后的付费铸造不会直接铸造每份数量。在一笔原子交易中：
   1. 买家支付 bnbGross = 每份现价价值 /（1 + 价格奖励）。
-  2. bnbGross 的 20% 用于发展（15% 回购销毁 + 5% 团队）。该份额按每次铸造
+  2. bnbGross 的 20% 用于发展（10% 回购销毁 + 5% 流动性 + 5% 团队）。该份额按每次铸造
      在合约内累计，每个批次完成时（每 1,111 次付费铸造）一次性释放，
      恰好覆盖该批次——绝不按次释放。
   3. bnbGross 的 80% 由铸造合约通过池子兑换（在 PancakeSwap 上 BNB -> QQAI）。
@@ -306,8 +316,8 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
 
 ### 池子资金——透明度摘要
 
-- 状态：发售前参数（尚无实时储备；合约尚未部署）。上线后，官网的池子资金
-  面板将读取链上池储备。
+- 状态：发售前参数（尚无实时储备；合约已部署并完成验证，但池子要到付费铸造
+  第 4,444 次才开启）。开池后，官网的池子资金面板将读取链上池储备。
 - 开池时点：付费铸造第 4,444 次（第 4 批售罄）。
 - 种子公式：池前（第 1–4 批）付费铸造收入的 80%，加上任何退款流动性储备
   （见退款安全网），再加按第 4 批价格从流动性储备配对的 QQAI。
@@ -317,7 +327,7 @@ QQAI 是 BNB 智能链（chainId 56）上的代币项目。其代币 $QQAI 通�
 ### 收入分配——摘要
 
 每次付费铸造、每个批次、两个阶段：80% 进入市场（池前为池子种子；开池后为
-经池买入兑换），20% 用于发展，公开发布的分配为 15% 回购销毁 + 5% 团队。
+经池买入兑换），20% 用于发展，公开发布的分配为 10% 回购销毁 + 5% 流动性 + 5% 团队。
 没有其他销售费用。免费铸造的唯一成本是每次 0.0001 BNB 入场费。
 释放时点：池前阶段完全不释放（全额托管）——累计的发展份额在开池时一次性
 释放；开池后则在每个批次完成时释放一次。若开售后 7 天内池子仍未开启，
